@@ -334,7 +334,7 @@ var Palettab = (function() {
         var b = (rgb >>  0) & 0xff;     // extract blue
 
         var luma = (r * 299 + g * 587 + b * 114) / 1000;
-        return luma > 128;
+        return luma > 256;
     }
 
     function assignColors( set ) {

@@ -169,7 +169,6 @@ textarea {
           text-decoration: none;
           position: absolute;
           line-height: 100%;
-          color: #fff;
           width: 100%; }
           .card-holster .card .top-half .font-container .sample-container.large {
             bottom: 60px; }
@@ -189,7 +188,6 @@ textarea {
         position: absolute;
         height: 100%;
         width: 100%;
-        color: #fff;
         opacity: 0;
         left: 0px;
         top: 0px; }

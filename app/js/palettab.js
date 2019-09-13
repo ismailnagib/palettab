@@ -327,6 +327,16 @@ var Palettab = (function() {
         assignColors( colorSet );
     }
 
+    function isLight( color ) {
+        var rgb = parseInt(color, 16);  // convert rrggbb to decimal
+        var r = (rgb >> 16) & 0xff;     // extract red
+        var g = (rgb >>  8) & 0xff;     // extract green
+        var b = (rgb >>  0) & 0xff;     // extract blue
+
+        var luma = (r * 299 + g * 587 + b * 114) / 1000;
+        return luma > 128;
+    }
+
     function assignColors( set ) {
 
         var colorSet = set.colors;
@@ -345,6 +355,7 @@ var Palettab = (function() {
             card.main.setAttribute( 'data-color', hashColor );
             card.colorWrapper.style.backgroundColor = hashColor;
             card.hex.innerHTML = hashColor;
+            card.main.style.color = isLight(colorSet[i]) ? '#000' : '#fff';
             card.eye.style.fill = hashColor;
         }
 
